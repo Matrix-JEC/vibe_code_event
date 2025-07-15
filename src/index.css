@@ -9,11 +9,6 @@
     --font-space-grostesk: "Space Grotesk", sans-serif;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 :root {
   color: rgb(255, 255, 255);
   background-color: #242424;
