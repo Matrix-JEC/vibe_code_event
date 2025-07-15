@@ -14,7 +14,7 @@ const navList = [
 const Header = () => {
   return (
     <header className='flex justify-between items-center mx-6 my-1'>
-      <img src={logoPng} alt="" className='w-16'/>
+      <img src={logoPng} alt="" className='h-14'/>
       <nav className='flex gap-2 font-space-grostesk font-normal items-center'>
         {navList.map((ele)=>{
           return (<NavLink to={ele.path} className={"px-2 rounded-full"} style={({isActive})=>{ return {backgroundColor: isActive ? "rgb(0 156 255 / 50%)": "transparent"}}} end>{ele.label}</NavLink>)

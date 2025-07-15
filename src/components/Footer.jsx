@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
-import matrixLogoPng from "/matrix_logo.png"
+import matrixLogoPng from "/matrixLogo.png"
 import twitterLogoPng from "/twitterLogo.png"
 import discordLogoPng from "/discordLogo.png"
 import githubLogoPng from "/githubLogo.png"
