@@ -1,26 +1,18 @@
-import { useState } from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router'
-import MainLayout from './layouts/MainLayout'
-import Home from './Pages/Home'
-import './App.css'
-
-const router = createBrowserRouter([
-  {
-    Component: MainLayout,
-    children: [
-      {
-        path: '/',
-        Component: Home,
-      }
-    ]
-  }
-])
+import react from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Human from './humans';
+import Register from './register';
 
 function App() {
 
   return (
     <>
-      <RouterProvider router={router}/>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Human/>} />
+        <Route path="/register" element={<Register/>} />
+      </Routes>
+    </Router>
     </>
   )
 }
