@@ -23,7 +23,7 @@ const Card = ({ url, text }) => {
 
 const HeroSection = () => {
   return (
-    <section className='w-full min-h-fit h-[calc(100dvh-3.5rem)] justify-evenly flex flex-col'>
+    <section className='w-full min-h-fit max-h-[40rem] h-[calc(100dvh-3.5rem)] justify-evenly flex flex-col'>
       <header className='flex flex-col items-center justify-center gap-2'>
         <h1 className='font-goldman text-9xl relative mr-4'><span className='text-outline'>VIBE CODE</span> <span className='text-[#FF3B30] text-3xl absolute rotate-90 top-0 bottom-0 -right-4 font-semibold'>2025</span></h1>
         <h2 className='font-syne text-2xl flex items-center gap-2'>Powered by <span className='font-bold text-[#FF0000] flex items-center font-k2d'><img src={matrixLogoPng} alt="" className='h-10' />ATRIX</span></h2>
