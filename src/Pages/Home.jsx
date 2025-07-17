@@ -5,7 +5,7 @@ import Flow from '../components/Flow'
 import RulesAndRewards from '../components/RulesAndRewards'
 
 const Home = () => {
-  return (<div className='mx-12 flex flex-col gap-6'>
+  return (<div className='ms:mx-6 mx-3 flex flex-col gap-6'>
     <HeroSection />
     <CountdownTimer />
     <Flow />

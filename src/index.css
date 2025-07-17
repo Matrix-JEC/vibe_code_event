@@ -8,11 +8,19 @@
     --font-syne: Syne, sans-serif;
     --font-space-grostesk: "Space Grotesk", sans-serif;
     --font-k2d: "K2D", sans-serif;
+    --breakpoint-ml: 55rem;
+    --breakpoint-ms: 35rem;
 }
 
 :root {
   color: rgb(255, 255, 255);
   background-color: #000000;
+}
+
+@media screen and (width <= 640px){
+  :root {
+    font-size: 0.8em;
+  }
 }
 
 .text-outline {

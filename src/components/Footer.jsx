@@ -23,7 +23,7 @@ const navigationLinks = {
 
 const Footer = () => {
   return (
-    <footer className='flex items-start justify-between mx-12 mt-12 mb-6'>
+    <footer className='md:flex hidden items-start justify-between mx-12 mt-12 mb-6'>
       <div className='flex flex-col items-center justify-center gap-6 self-center'>
         <div className='flex items-center gap-4'>
           <img src={matrixLogoPng} alt="" className='w-14' />

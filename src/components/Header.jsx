@@ -13,7 +13,7 @@ const navList = [
 
 const Header = () => {
   return (
-    <header className='flex justify-between items-center mx-12 my-1'>
+    <header className='md:flex justify-between items-center mx-12 my-1 hidden'>
       <img src={logoPng} alt="" className='h-14'/>
       <nav className='flex gap-2 font-space-grostesk font-normal items-center'>
         {navList.map((ele)=>{
