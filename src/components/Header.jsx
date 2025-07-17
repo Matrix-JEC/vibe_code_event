@@ -7,7 +7,7 @@ const navList = [
   { label: "Sponsers", path: "/sponsers" },
   { label: "Humans", path: "/humans" },
   { label: "FAQs", path: "/faqs" },
-  { label: "Contact us", path: "/constact-us" },
+  { label: "Contact us", path: "/contact" },
   { label: "Register", path: "/register" },
 ]
 
