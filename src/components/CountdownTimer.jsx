@@ -14,7 +14,7 @@ const CountdownTimer = () => {
 
 
     return (
-        <section className='w-fit m-auto'>
+        <section className='w-fit m-auto mb-8'>
             <h2 className='font-syne text-4xl text-center my-6'>There's a space for everybody at <span className='text-[#FF0105] font-black font-space-grostesk'>VIBE CODE</span> 2025.</h2>
             <div className='flex font-syne h-75 bg-[#1C1A1A] py-4 px-8 rounded-4xl justify-between w-full m-auto gap-12'>
                 <div className='justify-center items-center h-full flex flex-col'>
