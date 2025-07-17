@@ -1,24 +1,27 @@
 import React, { useState } from 'react'
+import DropdownInputField from '../components/DropdownInputField'
 
 const inputFieldList = [
   { type: "text", name: "fullName", label: "Full Name", options: { required: true, } },
   { type: "text", name: "teamMember", label: "Team Member" },
   { type: "text", name: "phoneNum", label: "Phone Number", options: { required: true, patten: /^\d+$/, maxLength: 10 } },
   { type: "text", name: "emailId", label: "Email Address", options: { required: true, patten: /^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/ } },
-  { type: "text", name: "branch", label: "Branch", options: { required: true, } },
-  { type: "text", name: "semester", label: "Semester", options: { required: true, } },
+  { type: "text", name: "branch", label: "Branch", options: { required: true, }, dropdown: true, values: ["AI", "CE", "CS", "EE", "MT", "IP", "IT"] },
+  { type: "text", name: "semester", label: "Semester", options: { required: true, }, dropdown: true, values: ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"] },
   { type: "text", name: "github", label: "Github" },
   { type: "text", name: "linkdin", label: "Linkdin" },
 ]
 
 
-const InputField = ({ type, name, label, value, onChange, error }) => {
+const InputField = ({ type, name, label, value, onChange, error, dropdown, values }) => {
   return (<div className='flex flex-col'>
     <div className='flex w-full justify-between'>
       <label htmlFor={name} className='text-xs'>{label}</label>
       {!!error && <p className='text-xs text-red-600'>{error}</p>}
     </div>
-    <input type={type} className='bg-[#D4D4D4] text-black rounded-lg text-xs px-2 py-1' id={name} name={name} value={value} onChange={onChange} />
+    {dropdown
+      ? <DropdownInputField value={value} setValue={onChange} options={values}/>
+      : <input type={type} className='bg-[#D4D4D4] text-black rounded-lg text-xs px-2 py-1' id={name} name={name} value={value} onChange={onChange} />}
   </div>)
 }
 
@@ -35,18 +38,16 @@ const Register = () => {
   });
   const [error, setError] = useState({})
 
-  const handleSubmit = (e)=>{
+  const handleSubmit = (e) => {
     console.log(formData);
-    const isValid = inputFieldList.reduce((acc, curr)=>{
-      console.log(curr.name, curr.options)
-      if(!validateField(curr.name, curr.options)) return false;
+    const isValid = inputFieldList.reduce((acc, curr) => {
+      if (!validateField(curr.name, curr.options)) return false;
       else return acc
     }, true)
-    if(isValid) console.log("submited!!")
-    console.log(isValid)
+    if (isValid) console.log("submited!!")
   }
 
-  const validateField = (field, options={}) => {
+  const validateField = (field, options = {}) => {
     const currValue = formData[field]
     if (options.required) {
       if (!currValue) { updateError(field, "required!!"); return false }
@@ -82,6 +83,9 @@ const Register = () => {
         <h1>Register Now</h1>
         <div className='grid grid-cols-2 gap-4'>
           {inputFieldList.map((ele) => {
+            if (ele.dropdown) {
+              return <InputField {...ele} key={ele.name} value={formData[ele.name]} onChange={(value) => { updateFormData(ele.name, value) }} options={ele.values} error={error[ele.name]} />
+            }
             return <InputField {...ele} value={formData[ele.name]} key={ele.name} onChange={(e) => { updateFormData(ele.name, e.target.value) }} error={error[ele.name]} />
           })}
         </div>
