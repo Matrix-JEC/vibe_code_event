@@ -4,6 +4,7 @@ import MainLayout from './layouts/MainLayout'
 import Home from './Pages/Home'
 import Register from './Pages/Register'
 import './App.css'
+import "flip-card-wc"
 
 const router = createBrowserRouter([
   {
