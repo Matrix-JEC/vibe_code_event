@@ -5,8 +5,10 @@ import Home from './Pages/Home'
 import FAQpage from './Pages/FAQpage'
 import Contact from './Pages/Contact'
 import Register from './Pages/Register'
+import Humans from './Pages/Humans'
 import './App.css'
 import "flip-card-wc"
+import humans from './Pages/Humans'
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         Component: Register,
+      },
+      {
+        path: '/humans',
+        Component: humans,
       },
     ]
   },

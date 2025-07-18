@@ -4,11 +4,15 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import { RiFacebookFill } from "react-icons/ri";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
+import BlurElement from '../components/BlurElement';
 
 export default function Contact() {
   return (
     <div className='m-auto ms:px-6 px-3 h-screen min-h-fit text-white w-fit'>
-        <p className='text-[#FF0105] font-bold font-poppins ml:text-6xl text-4xl max-[24rem]:text-3xl lg:p-4 pb-4 mb-4 relative left-2'>How Can We Help You ?</p>
+        <BlurElement
+      elements={[
+          
+          <p className='text-[#FF0105] font-bold font-poppins ml:text-6xl text-4xl max-[24rem]:text-3xl lg:p-4 pb-4 mb-4 relative left-2'>How Can We Help You ?</p>,
         <div className='bg-[#1A1A1A] relative lg:pl-16 pt-8 flex justify-between rounded-2xl p-4 min-w-fit min-h-fit lg:w-full w-fit'>
             <div className=''>
             <p className='w-80 font-medium font-syne text-4xl text-white'>
@@ -59,6 +63,11 @@ export default function Contact() {
             </div>
            
         </div>
+        ]}
+        delay={300}
+        direction="top"
+        className="flex flex-col justify-around max-ml:flex-col gap-2 items-center w-full"
+      />
       
     </div>
   )

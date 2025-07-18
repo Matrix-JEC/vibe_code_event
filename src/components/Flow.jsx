@@ -7,6 +7,7 @@ import flow5Png from "/flow5.png"
 import flow6Png from "/flow6.png"
 import eventFlowSvg from "/eventFlow.svg"
 import starSvg from "/star.svg"
+import BlurElement from './BlurElement'
 
 const cardContents = [
     { heading: "Register your vibe", text: "Play solo or team up with a coding buddy. Fill out the form and get ready to vibe.", img: flow1Png, position: "self-start" },
@@ -19,6 +20,7 @@ const cardContents = [
 
 const FlowCard = ({ heading, text, img, position }) => {
     return (
+        
         <div className={`bg-[#1C1A1A] ms:rounded-4xl rounded-2xl flex ms:pl-32 pl-4 ms:h-48 h-40 ms:w-[38rem] w-fit pr-2 justify-evenly ms:py-6 py-4 ${position} max-lg:self-start relative`}>
             <img src={starSvg} alt="" className='absolute z-20 ms:top-8 top-6 ms:left-14 -left-6 w-4'/>
             <div className='w-fit'>
@@ -33,7 +35,10 @@ const FlowCard = ({ heading, text, img, position }) => {
 const Flow = () => {
     return (
         <section>
-            <h2 className='font-poppins text-[#CF2C3C] font-bold ms:text-5xl text-3xl ms:mb-8 mb-4'>Hackathon Flow</h2>
+            <BlurElement
+  elements={[
+   
+            <h2 className='font-poppins text-[#CF2C3C] font-bold ms:text-5xl text-3xl ms:mb-8 mb-4'>Hackathon Flow</h2>,
             <div className='relative flex flex-col gap-[2.375rem] lg:w-[60.4rem] w-fit m-auto max-[24rem]:ml-6'>
                 <div className='absolute z-10 h-full w-fit top-10 left-16 hidden lg:block'>
                     <img src={eventFlowSvg} alt=""/>
@@ -43,7 +48,14 @@ const Flow = () => {
                 {cardContents.map((ele, index) => {
                     return <FlowCard key={index} heading={ele.heading} text={ele.text} img={ele.img} position={ele.position} />
                 })}
-            </div>
+            </div>,
+  ]}
+  delay={300}
+      direction="top"
+      className="flex-col justify-around max-ml:flex-col gap-2 items-center w-full"
+/>
+
+        
         </section>
     )
 }

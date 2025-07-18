@@ -3,22 +3,25 @@ import { Link } from 'react-router'
 import matrixLogoPng from "/matrixLogo.png"
 import twitterLogoPng from "/twitterLogo.png"
 import discordLogoPng from "/discordLogo.png"
+import instalogo from "/instalogo.png"
 import githubLogoPng from "/githubLogo.png"
 import linkdinLogoPng from "/linkdinLogo.png"
 
 const navigationLinks = {
   "Community": [
-    { label: "About", path: "/about" },
-    { label: "Guidelines", path: "/guidelines" },
-    { label: "Events", path: "/events" },
-    { label: "Blogs", path: "/blogs" },
+    { label: "Home", path: "/" },
+  // { label: "Sponsers", path: "/sponsers" },
+  // { label: "Humans", path: "/humans" },
+  { label: "FAQs", path: "/faqs" },
+  { label: "Contact us", path: "/contact" },
+  { label: "Register", path: "/register" },
   ],
-  "Resources": [
-    { label: "Documentaion", path: "/documentaion" },
-    { label: "Learning Center", path: "/learning-center" },
-    { label: "API Reference", path: "/api-reference" },
-    { label: "Support", path: "/support" },
-  ],
+  // "Resources": [
+  //   { label: "Documentaion", path: "/documentaion" },
+  //   { label: "Learning Center", path: "/learning-center" },
+  //   { label: "API Reference", path: "/api-reference" },
+  //   { label: "Support", path: "/support" },
+  // ],
 };
 
 const Footer = () => {
@@ -49,13 +52,22 @@ const Footer = () => {
 
 
       <div className='flex justify-center items-center flex-col gap-4 max-ml:col-span-2 max-ml:my-8 max-ml:row-start-2'>
-        <div className='text-2xl font-inter font-semibold'>Connect with us</div>
-        <div className='flex gap-6'>
-          {[twitterLogoPng, githubLogoPng, linkdinLogoPng, discordLogoPng].map((ele, index) => {
-            return <img key={index} src={ele} alt="" className='h-7' />
-          })}
-        </div>
-      </div>
+  <div className='text-2xl font-inter font-semibold'>Connect with us</div>
+  <div className='flex gap-6'>
+    {[
+      { icon: githubLogoPng, link: 'http://github.com/Matrix-JEC' },
+      { icon: linkdinLogoPng, link: 'https://www.linkedin.com/company/matrix-jec' },
+      { icon: instalogo, link: 'https://www.instagram.com/matrix.jec/' }
+    ].map((ele, index) => {
+      return (
+        <a key={index} href={ele.link} target="_blank" rel="noopener noreferrer">
+          <img src={ele.icon} alt="" className='h-7 text-white' />
+        </a>
+      );
+    })}
+  </div>
+</div>
+
     </footer>
   )
 }

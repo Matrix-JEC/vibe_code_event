@@ -5,7 +5,7 @@ export const FlipCard = ({
   frontOfCard,
   backOfCard
 }) => {
-  return <flip-card variant={"click"} className="trivia-card">
+  return <flip-card variant={"hover"} className="trivia-card">
   <div slot="front">
   {frontOfCard}
   </div>
