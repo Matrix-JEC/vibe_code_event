@@ -25,8 +25,8 @@ const BackOfCard = ({ heading, textContent }) => {
 const RulesAndRewards = () => {
     return (
         <section className='flex gap-10 w-full items-center justify-center my-8 max-[48rem]:flex-col'>
-            {content.map((ele) => {
-                return (<div className='w-80 h-fit'>
+            {content.map((ele, index) => {
+                return (<div className='w-80 h-fit' key={index}>
                     <FlipCard frontOfCard={<FrontOfCard img={ele.img} heading={ele.heading} />} backOfCard={<BackOfCard heading={ele.heading} textContent={ele.textContent}/>} />
                 </div>)
             })}

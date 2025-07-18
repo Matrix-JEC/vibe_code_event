@@ -30,8 +30,8 @@ const HeroSection = () => {
         <h3 className='font-poppins ml:text-2xl ms:text-xl text-lg font-medium max-[25rem]:w-60 text-center'>Where Al Meets Creativity. Code Meets Vibe.</h3>
       </header>
       <div className='flex justify-around max-ml:flex-col gap-2 items-center'>
-        {cardsContent.map((ele)=>{
-          return <Card url={ele.url} text={ele.text}/>
+        {cardsContent.map((ele, index)=>{
+          return <Card key={index} url={ele.url} text={ele.text}/>
         })}
       </div>
     </section>

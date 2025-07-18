@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router'
+import { NavLink, useNavigate } from 'react-router'
 import logoPng from '/logo.png'
 
 const navList = [
@@ -12,16 +12,20 @@ const navList = [
 ]
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
-    <header className='flex justify-between items-center lg:mx-12 mx-6 my-1'>
+    <header className='flex justify-between items-center lg:mx-12 ms:mx-6 mx-2 my-1'>
+      <div className='ms:w-30 w-24 h-fit'>
       <img src={logoPng} alt="" className='h-14' />
+      </div>
       <nav className='flex gap-2 font-space-grostesk font-normal items-center max-ml:hidden'>
         {navList.map((ele) => {
-          return (<NavLink to={ele.path} className={"px-2 rounded-full"} style={({ isActive }) => { return { backgroundColor: isActive ? "rgb(0 156 255 / 50%)" : "transparent" } }} end>{ele.label}</NavLink>)
+          return (<NavLink key={ele.label} to={ele.path} className={"px-2 rounded-full"} style={({ isActive }) => { return { backgroundColor: isActive ? "rgb(0 156 255 / 50%)" : "transparent" } }} end>{ele.label}</NavLink>)
         })}
       </nav>
       <ProfileLogo />
-      <button className='font-inter font-bold text-sm bg-[#FF0000CC] rounded-lg px-8 py-1.5'>
+      <button className='font-inter font-bold text-sm bg-[#FF0000CC] rounded-lg px-5 py-1.5 cursor-pointer'
+      onClick={(e)=>{navigate("/register")}}>
         Register
       </button>
     </header>
@@ -43,7 +47,9 @@ const ProfileLogo = () => {
         <div className='px-2 rounded-full bg-[#009cff80] w-24 text-center'>{currPage}</div>
         {display && <nav className='absolute flex-col min-w-fit flex py-2 rounded-lg mt-0.5 z-101 w-48 -left-12 overflow-hidden bg-[#0000005b]' style={{ backdropFilter: "blur(3px)" }}>
           {navList.map((ele) => {
-            return (<NavLink to={ele.path} className={"px-2 rounded-full text-center"} style={({ isActive }) => { if (isActive) setCurrPage(ele.label); return { backgroundColor: isActive ? "rgb(0 156 255 / 50%)" : "transparent" } }} end>{ele.label}</NavLink>)
+            return (<NavLink key={ele.label} to={ele.path} onClick={(e)=>{setCurrPage(ele.label)}} className={"px-2 rounded-full text-center"} style={({ isActive }) => { return { backgroundColor: isActive ? "rgb(0 156 255 / 50%)" : "transparent" } }} end>
+              {ele.label}
+              </NavLink>)
           })}
         </nav>
         }

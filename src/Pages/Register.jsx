@@ -15,7 +15,7 @@ const inputFieldList = [
 
 const InputField = ({ type, name, label, value, onChange, error, dropdown, values }) => {
   return (<div className='flex flex-col'>
-    <div className='flex w-full justify-between'>
+    <div className='flex w-56 justify-between'>
       <label htmlFor={name} className='text-xs'>{label}</label>
       {!!error && <p className='text-xs text-red-600'>{error}</p>}
     </div>
@@ -78,10 +78,10 @@ const Register = () => {
   }
 
   return (
-    <section className='h-dvh w-dvw flex items-center justify-center'>
-      <form className='border rounded-2xl flex flex-col items-center gap-4 font-poppins p-4'>
-        <h1>Register Now</h1>
-        <div className='grid grid-cols-2 gap-4'>
+    <section className='w-dvw min-w-fit h-fit flex items-center justify-center pt-4'>
+      <form className='rounded-xl flex flex-col items-center gap-4 font-poppins py-4 px-8 bg-[#1A1A1A]'>
+        <h1 className='font-semibold text-3xl text-[#FF0105]'>Register Now</h1>
+        <div className='grid ms:grid-cols-2 grid-cols-1 gap-6'>
           {inputFieldList.map((ele) => {
             if (ele.dropdown) {
               return <InputField {...ele} key={ele.name} value={formData[ele.name]} onChange={(value) => { updateFormData(ele.name, value) }} options={ele.values} error={error[ele.name]} />
@@ -89,7 +89,7 @@ const Register = () => {
             return <InputField {...ele} value={formData[ele.name]} key={ele.name} onChange={(e) => { updateFormData(ele.name, e.target.value) }} error={error[ele.name]} />
           })}
         </div>
-        <button type='button' className='rounded-full px-4 py-1 font-semibold bg-[#FF2C41] w-fit' onClick={handleSubmit}>
+        <button type='button' className='font-inter font-bold text-sm bg-[#FF0000CC] rounded-lg px-8 py-1.5 cursor-pointer mt-4 mb-2' onClick={handleSubmit}>
           REGISTER!
         </button>
       </form>

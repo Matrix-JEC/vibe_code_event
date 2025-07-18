@@ -40,8 +40,8 @@ const Flow = () => {
                 </div>
                 <div className='absolute z-10 ms:h-[72rem] h-[62rem] w-[2px] ms:top-10 top-8 ms:left-16 -left-4 bg-red-700 lg:hidden'>
                 </div>
-                {cardContents.map((ele) => {
-                    return <FlowCard heading={ele.heading} text={ele.text} img={ele.img} position={ele.position} />
+                {cardContents.map((ele, index) => {
+                    return <FlowCard key={index} heading={ele.heading} text={ele.text} img={ele.img} position={ele.position} />
                 })}
             </div>
         </section>

@@ -6,9 +6,11 @@ import Footer from '../components/Footer'
 const MainLayout = () => {
   return (
     <>
-        <Header/>
-            <Outlet/>
-        <Footer/>
+      <div className='min-h-dvh h-fit flex flex-col justify-between'>
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
     </>
   )
 }

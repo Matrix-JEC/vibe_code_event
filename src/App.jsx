@@ -23,12 +23,12 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         Component: Contact,
-      }
+      },
+      {
+        path: '/register',
+        Component: Register,
+      },
     ]
-  },
-  {
-    path: '/register',
-    Component: Register,
   },
 ])
 
