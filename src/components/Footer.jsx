@@ -26,7 +26,7 @@ const navigationLinks = {
 
 const Footer = () => {
   return (
-    <footer className='grid grid-cols-2 ml:flex items-start justify-between mx-12 mt-12 mb-6'>
+    <footer className='grid grid-cols-1 ml:flex items-start justify-between mx-12 mt-12 mb-6'>
       <div className='flex flex-col items-center justify-center gap-6 self-center col-span-2'>
         <div className='flex items-center gap-4'>
           <img src={matrixLogoPng} alt="" className='w-14' />
@@ -39,7 +39,7 @@ const Footer = () => {
 
       {Object.keys(navigationLinks).map((key, index) => {
         return (
-          <div key={index} className='text-[#FFFFFFCC] font-inter max-ml:w-4/5 max-ml:ml-auto'>
+          <div key={index} className='text-[#FFFFFFCC] font-inter max-ml:w-fit max-ml:m-auto'>
             <h4 className='text-lg font-semibold mb-2'>{key}</h4>
             <nav className='flex flex-col text-sm gap-2'>
               {navigationLinks[key].map((ele, index)=>{
